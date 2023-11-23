@@ -1,4 +1,13 @@
 {
+
+   "admin":[
+     {
+        "email":"rushi@gmail.com",
+        "password":"rushi",
+        "token":"ok"
+
+     }
+   ],
   "users": [
     {
       "id": 1,

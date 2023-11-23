@@ -21,11 +21,17 @@ app.post("/add",(req,res)=>{
     res.send("User Registered")
 })
 
-// app.post("/login",(req,res)=>{
-//     const {email,password} = req.body
+app.post("/login",(req,res)=>{
+    const {email,password} = req.body
 
-//     const data = JSON.parse(fs.readFileSync("./data.json","utf-8"))
-// })
+    const data = JSON.parse(fs.readFileSync("./data.json","utf-8"))
+    const admin = data.admin.find(admin=> admin.email === email && admin.password === password)
+    if(admin){
+        res.json({token:admin.token})
+    }else{
+        res.json("wrong credentials")
+    }
+})
 
 app.listen(8000,()=>{
     console.log("Server  runnung")
