@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navBar" style="display: flex; justify-content: center;">
+      <button id="admin" style="background-color: red;" >Admin</button>
+      <button id="user" style="margin-left: 10px; background-color: aqua;">User</button>
+    </nav>
+    
+</body>
+<script>
+      document.getElementById("admin").addEventListener("click",()=>{
+        window.location.href = `./admin/admin.html`
+      })
+      document.getElementById("user").addEventListener("click",()=>{
+        window.location.href = `./users/register.html`
+      })
+</script>
+</html>

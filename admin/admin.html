@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+
+        <nav class="navBar" style="display: flex; justify-content: center;">
+            <button id="freelancers" style="background-color: red;" >Freelancers</button>
+            <button id="login" style="margin-left: 10px; background-color: aqua;">Login</button>
+            <button id="reports" style="background-color: chartreuse;" >Reports</button>
+          </nav>
+<a href="./freelancers.html"></a>
+    
+</body>
+
+<script>
+     document.getElementById("login").addEventListener("click",()=>{
+        window.location.href = `./login.html`
+      })
+      document.getElementById("freelancers").addEventListener("click",()=>{
+        window.location.href = `./freelancers.html`
+      })
+
+      document.getElementById("reports").addEventListener("click",()=>{
+        window.location.href = `./reports.html`
+      })
+      
+</script>
+</html>

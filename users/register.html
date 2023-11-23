@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="" id="registrationForm">
+        <label for="name">Name:-</label>
+        <input type="text" id="name">
+        <label for="profilePicture">Profile Picture:-</label>
+        <input type="text" name="" id="picture" placeholder="link">
+        <label for="emsil">Email</label>
+        <input type="text" id="email">
+        <label for="password">Password</label>
+        <input type="password" id="pass">
+        <label for="profession"></label>
+        <select name="" id="profession">
+            <option value="Student">Student</option>
+            <option value="Web DEveloper">Web Developer</option>
+            <option value="Graphic Designer">Graphic Designer</option>
+        </select>
+
+        <label for="skills">Skills</label>
+            <input type="text" id="skills">
+            <label for="hourlyRate">Hourly Rate</label>
+            <input type="text" id="rate">
+
+            <button type="submit">Register</button>
+
+
+    </form>
+    
+</body>
+
+<script>
+
+const registrationForm = document.getElementById("registrationForm");
+
+registrationForm.addEventListener("submit", function (e) {
+    e.preventDefault();  
+
+    const formData = {
+        name: document.getElementById("name").value,
+        profile_picture: document.getElementById("picture").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("pass").value,
+        profession: document.getElementById("profession").value,
+        skills: document.getElementById("skills").value,
+        hourly_rate: document.getElementById("rate").value,
+        isBooked: false,
+    };
+
+    fetch("http://localhost:8000/add", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    })
+        .then((res) => res.json())
+        .then((data) => alert("Registered Successfully"))
+        .catch((error) => console.log(error));
+});
+
+
+
+
+</script>
+</html>
